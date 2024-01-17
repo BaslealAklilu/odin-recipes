@@ -1,4 +1,5 @@
 // It's Really messy but it works!
+// It's best out of 5 and statically done!
 let compwin = 0
 let humwin = 0
 
