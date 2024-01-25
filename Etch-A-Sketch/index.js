@@ -21,11 +21,11 @@ function render(p = 10){
     }
 }
 render(10)
-
+let x = 255
 const s = document.querySelectorAll('.grid')
 s.forEach(node =>{
     node.addEventListener('mouseover',(e)=>{
-        node.style.backgroundColor = 'blue';
+        node.style.backgroundColor = `rgb(${x-=10},${x-=10},${x-=10})`;
     })
 })
 const button = document.querySelector('.btn')
@@ -54,7 +54,7 @@ button.addEventListener('click',(e)=>{
     const s = document.querySelectorAll('.grid')
     s.forEach(node =>{
         node.addEventListener('mouseover',(e)=>{
-            node.style.backgroundColor = 'blue';
+            node.style.backgroundColor = `rgb(${x-=10},${x-=10},${x-=10})`;
         })
     })
 })
