@@ -3,13 +3,16 @@
     padding:0;
     box-sizing: border-box;
 }
+h1{
+    margin-top:30px;
+}
 .row{
-    height: 100vh;
-    border:1px solid red;
+    height: 100%;
     background-color: antiquewhite;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap:100px;
+    flex-direction: column;
 }
 .container{
     display: flex;
@@ -25,4 +28,45 @@ button{
     color:white;
     font-size:20px;
     font-weight:400;
+}
+.result{
+    display: flex;
+    gap:20px;
+}
+.p,.c{
+    display: flex;
+    flex-direction: column;
+}
+.pr,.comp{
+    height:70px;
+    width :100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bolder;
+    
+}
+h2{
+    text-align: center;
+}
+
+.results{
+    height:70px;
+    width:300px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size:18px;
+}
+.now{
+    height:150px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size:18px;
 }

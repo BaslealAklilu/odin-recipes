@@ -134,7 +134,13 @@
 const rock = document.querySelector('.r')
 const paper = document.querySelector('.p')
 const scissor = document.querySelector('.s')
-
+const play = document.querySelector('.pr')
+const comp = document.querySelector('.comp')
+const results = document.querySelector('.results')
+const now = document.querySelector('.now')
+let humwin = 0
+let compwin = 0
+let round = 0
 
 function getComputerChoice(){
     choice = ["rock","paper",'scissor']
@@ -144,42 +150,61 @@ function getComputerChoice(){
 
 function game(){
     rock.addEventListener('click',(e)=>{
-        playRound(e.target.value ,getComputerChoice)
+        computerSelection = getComputerChoice()
+        playRound(e.target.value ,computerSelection)
+        console.log(e.target.value,computerSelection)
     })
 
     paper.addEventListener('click',(e)=>{
-        playRound(e.target.value ,getComputerChoice)
+        computerSelection = getComputerChoice()
+        playRound(e.target.value ,computerSelection)
+        console.log(e.target.value,computerSelection)
     })
 
     scissor.addEventListener('click',(e)=>{
-        playRound(e.target.value ,getComputerChoice)
+        computerSelection = getComputerChoice()
+        playRound(e.target.value ,computerSelection)
+        console.log(e.target.value,computerSelection)
     })
 }
 
-let humwin = 0
-let compwin = 0
+
 function playRound(playerSelection,computerSelection){
+    round++
     if (playerSelection === computerSelection){
-            console.log('Go Again!')
+            now.textContent =  'Go Again!'
+            round--
         }
         else{
                 if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissor") || (playerSelection === "scissor" && computerSelection === "rock")){
-                    console.log("Computer Wins")
-                    compwin = compwin + 1
-                    console.log(compwin)
+                    now.textContent = 'Computer Wins this round!'
+                    compwin = compwin + 1 
                 }
                 else if((playerSelection === "rock" && computerSelection === "scissor") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissor" && computerSelection === "paper")){
-                    console.log("Human Wins")
-                    humwin = humwin + 1
-                    console.log(humwin)
+                    now.textContent = 'Human Wins this round!'
+                    humwin = humwin + 1     
             }
         }
-        
-        return [humwin,compwin]
+
+        play.textContent = humwin
+        comp.textContent = compwin
+        if(round == 10){
+            if(humwin > compwin){
+                results.textContent = 'Human Wins'
+            }
+            else if(humwin < compwin){
+                results.textContent = 'Computer Wins'
+            }
+            else{
+                results.textContent = "It's a Tie"
+            }
+            rock.disabled = true
+            scissor.disabled = true
+            paper.disabled = true
+
+        }
 }
 
 
-
-
-
+game()
 
