@@ -21,7 +21,7 @@ function render(p = 10){
     }
 }
 render(10)
-let x = 255
+let x = -255
 const s = document.querySelectorAll('.grid')
 s.forEach(node =>{
     node.addEventListener('mouseover',(e)=>{
