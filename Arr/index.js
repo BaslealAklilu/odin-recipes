@@ -42,3 +42,15 @@ btn.addEventListener('click',(e) =>{
 // div.textContent = 'Hello World!'
 
 // container.appendChild(div)
+
+
+function ObjCreate(name){
+    this.name = name
+    this.introduceName = function (){
+        return `My name is ${this.name}`
+    }
+}
+
+
+Bas = new ObjCreate("Basleal")
+console.log(Bas.introduceName())
