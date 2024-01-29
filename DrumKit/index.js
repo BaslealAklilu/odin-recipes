@@ -25,38 +25,37 @@ document.addEventListener("keydown", function(event) {
         audi1.play()
     }
     else if(key === 's'){
-        s.classList.toggle('boxx')
+        s.classList.add('boxx')
         audi2.play()
     }
     else if(key === 'd'){
-        d.classList.toggle('boxx')
+        d.classList.add('boxx')
         audi3.play()
     }
     else if(key === 'f'){
-        f.classList.toggle('boxx')
+        f.classList.add('boxx')
         audi4.play()
     }
     else if(key === 'g'){
-        g.classList.toggle('boxx')
+        g.classList.add('boxx')
         audi5.play()
     }
     else if(key === 'h'){
-        h.classList.toggle('boxx')
+        h.classList.add('boxx')
         audi6.play()
     }
     else if(key === 'j'){
-        j.classList.toggle('boxx')
+        j.classList.add('boxx')
         audi7.play()
     }
     else if(key === 'k'){
-        k.classList.toggle('boxx')
+        k.classList.add('boxx')
         audi8.play()
     }
     else if(key === 'l'){
-        l.classList.toggle('boxx')
+        l.classList.add('boxx')
         audi9.play()
     }
-    console.log(typeof(key),key)
   });
 
 
