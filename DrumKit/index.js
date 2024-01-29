@@ -21,7 +21,7 @@ const audi9 = document.getElementById('audi9')
 document.addEventListener("keydown", function(event) {
     let key = event.key;
     if (key === 'a'){
-        a.classList.toggle('boxx')
+        a.classList.add('boxx')
         audi1.play()
     }
     else if(key === 's'){
@@ -59,11 +59,43 @@ document.addEventListener("keydown", function(event) {
     console.log(typeof(key),key)
   });
 
-box.forEach(x =>{
-    x.addEventListener('keyup', e=>{
-        x.classList.remove('boxx')
-    })
+
+  document.addEventListener("keyup", function(event) {
+    let key = event.key;
+    if (key === 'a'){
+        a.classList.remove('boxx')
+    }
+    else if(key === 's'){
+        s.classList.remove('boxx')
+    }
+    else if(key === 'd'){
+        d.classList.remove('boxx')
+    }
+    else if(key === 'f'){
+        f.classList.remove('boxx')
+    }
+    else if(key === 'g'){
+        g.classList.remove('boxx')
+    }
+    else if(key === 'h'){
+        h.classList.remove('boxx')
+    }
+    else if(key === 'j'){
+        j.classList.remove('boxx')
+    }
+    else if(key === 'k'){
+        k.classList.remove('boxx')
+    }
+    else if(key === 'l'){
+        l.classList.remove('boxx')
+    }
 })
+
+// box.forEach(x =>{
+//     x.addEventListener('keyup', e=>{
+//         x.classList.remove('boxx')
+//     })
+// })
 
 // box.forEach(x =>{
 //     x.addEventListener('keydown',e=>{
