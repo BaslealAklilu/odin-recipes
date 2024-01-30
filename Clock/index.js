@@ -1,12 +1,8 @@
-
 // let hour = d.getHours();
-// let minutes = d.getMinutes();
-
+// let minutes = d.getMinutes()
 const hours = document.querySelector('.hour')
 const minute = document.querySelector('.minute')
 const seconds = document.querySelector('.second')
-
-
 // console.log(hour,minutes,seconds)
 setInterval(() =>{
     const now = new Date();

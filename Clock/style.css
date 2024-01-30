@@ -48,5 +48,5 @@
 
 
 .hour_count{
-    rotate:
+    rotate:1 1 0 60deg;
 }
