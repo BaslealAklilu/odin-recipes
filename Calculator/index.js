@@ -31,3 +31,18 @@ function operate(Fnumber,Operator,Snumber){
         divide(Fnumber,Snumber)
     }
 }
+
+
+const one = document.querySelector('.one')
+const output = document.querySelector('.output')
+const box = document.querySelectorAll('.box')
+console.log(typeof(one))
+box.forEach(boxes =>{
+    // one.addEventListener('click',(e)=>{
+    //    output.textContent = `${e.target.dataset.one}`
+    // })
+    boxes.addEventListener('click',(e)=>{
+        let value = boxes.classList[1]
+        output.textContent = e.target.dataset[value]
+    })
+})
