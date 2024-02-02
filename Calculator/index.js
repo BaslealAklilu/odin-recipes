@@ -1,6 +1,6 @@
-Fnumber = 0
-Operator = ''
-Snumber = 0
+let Fnumber = ''
+const Operator = ''
+const Snumber = ''
 function add(a,b){
     console.log(a + b)
 }
@@ -37,12 +37,18 @@ const one = document.querySelector('.one')
 const output = document.querySelector('.output')
 const box = document.querySelectorAll('.box')
 console.log(typeof(one))
+let number = ''
 box.forEach(boxes =>{
     // one.addEventListener('click',(e)=>{
     //    output.textContent = `${e.target.dataset.one}`
     // })
+
     boxes.addEventListener('click',(e)=>{
         let value = boxes.classList[1]
-        output.textContent = e.target.dataset[value]
+        console.log(number)
+        number = number + e.target.dataset[value]
+        console.log(number)
+        output.textContent = number
+        console.log(e.target.dataset[value])
     })
 })
