@@ -1,10 +1,12 @@
 let Fnumber = ''
 const Operator = ''
 const Snumber = ''
-
-
+const arr = []
 function typeConverter(...theArgs){
-    console.log(theArgs)
+    for(let i =0; i < theArgs.length; i++){
+        arr.push(theArgs[i])
+    }
+    console.log(arr)
     console.log(`from typeConverter`)
 }
 function add(a,b){
@@ -43,7 +45,7 @@ const one = document.querySelector('.one')
 const output = document.querySelector('.output')
 const nums = document.querySelectorAll('.nums')
 const operator = document.querySelectorAll('.operator')
-const equal = document.querySelector('equal')
+const equal = document.querySelector('.equal')
 console.log(typeof(one))
 let number = ''
 nums.forEach(num =>{
@@ -70,4 +72,6 @@ operator.forEach(oper =>{
     })
 })
 
-
+equal.addEventListener('click',(e)=>{
+    console.log(arr)
+})
