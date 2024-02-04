@@ -73,5 +73,6 @@ operator.forEach(oper =>{
 })
 
 equal.addEventListener('click',(e)=>{
+    equal.style.display = 'None';
     console.log(arr)
 })
