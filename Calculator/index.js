@@ -1,6 +1,12 @@
 let Fnumber = ''
 const Operator = ''
 const Snumber = ''
+
+
+function typeConverter(...theArgs){
+    console.log(theArgs)
+    console.log(`from typeConverter`)
+}
 function add(a,b){
     console.log(a + b)
 }
@@ -19,32 +25,34 @@ function divide(a,b){
 
 function operate(Fnumber,Operator,Snumber){
     if (Operator === '+'){
-        add(Fnumber,Snumber)
+        typeConverter(Fnumber,Snumber)
     }
     else if(Operator === '-'){
-        subtract(Fnumber,Snumber)
+        typeConverter(Fnumber,Snumber)
     }
     else if (Operator === '*'){
-        multiply(Fnumber,Snumber)
+        typeConverter(Fnumber,Snumber)
     }
     else if (Operator === '/'){
-        divide(Fnumber,Snumber)
+        typeConverter(Fnumber,Snumber)
     }
 }
 
 
 const one = document.querySelector('.one')
 const output = document.querySelector('.output')
-const box = document.querySelectorAll('.box')
+const nums = document.querySelectorAll('.nums')
+const operator = document.querySelectorAll('.operator')
+const equal = document.querySelector('equal')
 console.log(typeof(one))
 let number = ''
-box.forEach(boxes =>{
+nums.forEach(num =>{
     // one.addEventListener('click',(e)=>{
     //    output.textContent = `${e.target.dataset.one}`
     // })
 
-    boxes.addEventListener('click',(e)=>{
-        let value = boxes.classList[1]
+    num.addEventListener('click',(e)=>{
+        let value = num.classList[2]
         console.log(number)
         number = number + e.target.dataset[value]
         console.log(number)
@@ -52,3 +60,14 @@ box.forEach(boxes =>{
         console.log(e.target.dataset[value])
     })
 })
+
+operator.forEach(oper =>{
+    oper.addEventListener('click',(e)=>{
+        let value = oper.classList[2]
+        typeConverter(number,e.target.dataset[value])
+        output.textContent = ''
+        number = ''
+    })
+})
+
+
