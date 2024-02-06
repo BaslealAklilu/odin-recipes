@@ -1,7 +1,7 @@
 let Fnumber = ''
 const Operator = ''
 const Snumber = ''
-const arr = []
+let arr = []
 function typeConverter(...theArgs){
     for(let i =0; i < theArgs.length; i++){
         arr.push(theArgs[i])
@@ -10,19 +10,63 @@ function typeConverter(...theArgs){
     console.log(`from typeConverter`)
 }
 function add(a,b){
-    return (a + b)
+    if(a === '' || b === ' ' ){
+        return 0
+    }
+    else if(a === ''){
+        return b
+    }
+    else if(b === ''){
+        return a
+    }
+    else{
+        return (a + b)
+    }
 }
 
 function subtract(a,b){
-    return (a-b)
+    if(a === '' || b === '' ){
+        return 0
+    }
+    else if(a === ''){
+        return -b
+    }
+    else if(b === ''){
+        return -a
+    }
+    else{
+        return (a - b)
+    }
 }
 
 function multiply(a,b){
-    return (a*b)
+    if(a === '' || b === ' ' ){
+        return 0
+    }
+    else if(a === ''){
+        return 0
+    }
+    else if(b === ''){
+        return 0
+    }
+    else{
+        return (a * b)
+    }
 }
 
 function divide(a,b){
-    return (a/b)
+    if(a === '' || b === ' ' ){
+        return 0
+    }
+    else if(a === ''){
+        return 0
+    }
+    else if(b === ''){
+        return 0
+    }
+    else{
+        return (a / b)
+    }
 }
 
 function operate(arr){
@@ -56,7 +100,7 @@ function operate(arr){
                 continue
             }
         }
-    console.log(temp)
+        output.textContent = temp
     }
 
 
@@ -93,6 +137,7 @@ operator.forEach(oper =>{
 })
 
 equal.addEventListener('click',(e)=>{
-    equal.style.cssText = 'display:None';
+    // equal.style.cssText = 'display:None';
     operate(arr)
+    arr = []
 })
