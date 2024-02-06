@@ -91,7 +91,7 @@ function operate(arr){
                 temp = subtract(+temp,+arr[i + 1])
             }
             else if(arr[i] === '*'){
-                temp = multiply(+temp,+arr[i + 1])
+                temp = multiply(+temp,+arr[i + 1]) 
             }
             else if(arr[i] === '/'){
                 temp = divide(+temp,+arr[i + 1])
@@ -137,7 +137,7 @@ operator.forEach(oper =>{
 })
 
 equal.addEventListener('click',(e)=>{
-    // equal.style.cssText = 'display:None';
+    //equal.style.cssText = 'display:None';
     operate(arr)
     arr = []
 })
