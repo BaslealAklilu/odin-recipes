@@ -10,35 +10,55 @@ function typeConverter(...theArgs){
     console.log(`from typeConverter`)
 }
 function add(a,b){
-    console.log(a + b)
+    return (a + b)
 }
 
 function subtract(a,b){
-    console.log(a-b)
+    return (a-b)
 }
 
 function multiply(a,b){
-    console.log(a*b)
+    return (a*b)
 }
 
 function divide(a,b){
-    console.log(a/b)
+    return (a/b)
 }
 
-function operate(Fnumber,Operator,Snumber){
-    if (Operator === '+'){
-        typeConverter(Fnumber,Snumber)
+function operate(arr){
+    // if (Operator === '+'){
+    //     typeConverter(Fnumber,Snumber)
+    // }
+    // else if(Operator === '-'){
+    //     typeConverter(Fnumber,Snumber)
+    // }
+    // else if (Operator === '*'){
+    //     typeConverter(Fnumber,Snumber)
+    // }
+    // else if (Operator === '/'){
+    //     typeConverter(Fnumber,Snumber)
+    // }
+    let temp = parseInt(arr[0])
+    for(let i = 0; i< arr.length + 1; i++){
+            if(arr[i] === '+'){
+                temp = add(+temp,+arr[i + 1])
+            }
+            else if(arr[i] === '-'){
+                temp = subtract(+temp,+arr[i + 1])
+            }
+            else if(arr[i] === '*'){
+                temp = multiply(+temp,+arr[i + 1])
+            }
+            else if(arr[i] === '/'){
+                temp = divide(+temp,+arr[i + 1])
+            }
+            else{
+                continue
+            }
+        }
+    console.log(temp)
     }
-    else if(Operator === '-'){
-        typeConverter(Fnumber,Snumber)
-    }
-    else if (Operator === '*'){
-        typeConverter(Fnumber,Snumber)
-    }
-    else if (Operator === '/'){
-        typeConverter(Fnumber,Snumber)
-    }
-}
+
 
 
 const one = document.querySelector('.one')
@@ -73,6 +93,6 @@ operator.forEach(oper =>{
 })
 
 equal.addEventListener('click',(e)=>{
-    equal.style.display = 'None';
-    console.log(arr)
+    equal.style.cssText = 'display:None';
+    operate(arr)
 })
